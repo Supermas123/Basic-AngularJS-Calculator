@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html ng-app="Test" >
+  <head>
+    <script src="angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style> 
+body{background-color:pink} 
+h1{color:red};
+th{text-align: center}
+    </style>
+  </head>
+  <body ng-controller="control">
+    <h1 align="center"><strong>{{message}}</strong></h1>
+    <form name="addNumbers" ng-submit="check(var1,var2)">
+    <div align="center" text-size-adjust="100%">
+    <input type="number"  ng-model="var1" style="height:30px, width:10px" />
+    <select ng-model="operation">
+      <option value="multiply">Multiply</option>
+      <option value="add">Add</option>
+      <option value="subtract">Subtract</option>
+      <option value="divide">Divide</option>
+    </select>
+    <input type="number"  ng-model="var2" style="height:30px, width:10px" />
+    <input type="submit" value="Submit" ng-click="check(var1,var2)"><br />
+    </div>
+    <br />
+    </form>
+    <div align="center" ng-show="answer"><font size="6"> <strong>ANSWER: <br /> {{answer | number:5}}</strong></font></div>
+  </body>
+
+</html>
